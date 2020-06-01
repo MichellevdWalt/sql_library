@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1 Are you sure you want to permanently delete this book?
+  h2 Title: #{book.title}
+  p Author: #{book.author}
+  p Year Published: #{book.year}
+  form(method='post' action='/books/' + book.id + '/delete')
+    p
+      a.button(href='/books/' + book.id) Cancel
+      input(type='submit' value='Delete' class="delete")
